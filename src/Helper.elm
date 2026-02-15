@@ -17,6 +17,9 @@ calc : Int -> Int -> (Int -> Int -> Int) -> Int
 calc int1 int2 operator =
     operator int1 int2
 
+languageNames :  List {name : String, releaseYear : Int, currentVersion: String} -> List String
+languageNames list =
+  List.map .name list 
 
 onlyStudents : List { name : String, uType : String } -> List String
 onlyStudents list =
@@ -36,8 +39,8 @@ type alias Videogame =
     { title : String, releaseYear : Int, available : Bool, downloads : Int, genres : List String }
 
 
-getVideogameGenre : List Videogame -> List (List String)
-getVideogameGenre gameList =
+getVideogameGenres : List Videogame -> List (List String)
+getVideogameGenres gameList =
     List.map .genres gameList
 
 
