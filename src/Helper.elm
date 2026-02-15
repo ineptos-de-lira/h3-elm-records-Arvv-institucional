@@ -17,9 +17,11 @@ calc : Int -> Int -> (Int -> Int -> Int) -> Int
 calc int1 int2 operator =
     operator int1 int2
 
-languageNames :  List {name : String, releaseYear : Int, currentVersion: String} -> List String
+
+languageNames : List { name : String, releaseYear : Int, currentVersion : String } -> List String
 languageNames list =
-  List.map .name list 
+    List.map .name list
+
 
 onlyStudents : List { name : String, uType : String } -> List String
 onlyStudents list =
